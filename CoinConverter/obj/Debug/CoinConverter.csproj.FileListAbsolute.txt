@@ -1,0 +1,16 @@
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\ApplicationIcon.png
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\Background.png
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\CoinConverter.dll
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\CoinConverter.pdb
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\AppManifest.xaml
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\CoinConverter.xap
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\obj\Debug\App.g.i.cs
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\obj\Debug\MainPage.g.i.cs
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\obj\Debug\CoinConverter.g.resources
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\obj\Debug\CoinConverter.dll
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\obj\Debug\CoinConverter.pdb
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\obj\Debug\XapCacheFile.xml
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\asandin\documents\visual studio 2010\Projects\CoinConverter\CoinConverter\Bin\Debug\coin.xml
