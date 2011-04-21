@@ -17,6 +17,9 @@
    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <controls:Panorama Title="coin converter" Name="RootView">
+        <controls:Panorama.Background>
+            <ImageBrush ImageSource="map.png"/>
+        </controls:Panorama.Background>
 
     </controls:Panorama>
     <!--Sample code showing usage of ApplicationBar-->

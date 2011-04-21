@@ -14,13 +14,20 @@ using System.Xml;
 using System.Xml.Linq;
 using System.IO;
 using System.IO.IsolatedStorage;
+using Microsoft.Advertising.Mobile.UI;
 
 namespace CoinConverter
 {
     public partial class MainPage : PhoneApplicationPage
     {
+
+               
         private Dictionary<String, float> currencies;
         private List<String> filter;
+
+        
+ 
+
 
         public void downloadComplete(Object sender, DownloadStringCompletedEventArgs e)
         {
@@ -106,6 +113,7 @@ namespace CoinConverter
                 Grid innerGrid = new Grid() { Name = "innerGrid" + fromName };
                 innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(80)});
                 innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(40, GridUnitType.Auto)});
+                
 
                 TextBox tempTextBox = new TextBox() { Name = fromName };
                 tempTextBox.TextChanged += new TextChangedEventHandler(textChangedHandler);
@@ -127,7 +135,7 @@ namespace CoinConverter
                     if (i != j)
                     {
                         tempGrid.RowDefinitions.Add(new RowDefinition());
-                        TextBlock tempText = new TextBlock() { Name = "textBlockFrom" + fromName + "For" + currencies.ElementAt(j).Key.ToString(), Text = currencies.ElementAt(j).Key.ToString() + " = ...", FontSize = 62 };
+                        TextBlock tempText = new TextBlock() { Name = "textBlockFrom" + fromName + "For" + currencies.ElementAt(j).Key.ToString(), Text = currencies.ElementAt(j).Key.ToString() + " = ...", FontSize = 42 };
                         tempGrid.Children.Add(tempText);
                         Grid.SetRow(tempText, rowIndex);
                         rowIndex++;
@@ -140,6 +148,12 @@ namespace CoinConverter
 
                 temp.Content = innerGrid;
                 RootView.Items.Add(temp);
+
+
+
+                
+
+
             }
         }
 
