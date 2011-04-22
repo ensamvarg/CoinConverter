@@ -95,6 +95,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="map.png" />
+    <Content Include="GameThumbnail2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

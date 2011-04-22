@@ -18,15 +18,13 @@ using Microsoft.Advertising.Mobile.UI;
 
 namespace CoinConverter
 {
+
     public partial class MainPage : PhoneApplicationPage
     {
 
-               
+        
         private Dictionary<String, float> currencies;
         private List<String> filter;
-
-        
- 
 
 
         public void downloadComplete(Object sender, DownloadStringCompletedEventArgs e)
@@ -68,7 +66,7 @@ namespace CoinConverter
             currencies.Add("EUR", 1);
             filter = new List<String>()
             {
-                "usd","eur","jpy","gbp","sek","cad","aud"
+                "usd","eur","jpy","gbp","sek"
             };
 
             WebClient web = new WebClient();
@@ -112,8 +110,9 @@ namespace CoinConverter
 
                 Grid innerGrid = new Grid() { Name = "innerGrid" + fromName };
                 innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(80)});
-                innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(40, GridUnitType.Auto)});
-                
+                innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(290)});
+                innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(100, GridUnitType.Auto)});
+
 
                 TextBox tempTextBox = new TextBox() { Name = fromName };
                 tempTextBox.TextChanged += new TextChangedEventHandler(textChangedHandler);
@@ -150,10 +149,19 @@ namespace CoinConverter
                 RootView.Items.Add(temp);
 
 
+                AdControl.TestMode = false;
+                //ApplicationID = "4fd1b245-b648-44de-add5-1a6408f4618a", AdUnitID = "10016135", 
+                //AdModel = Contextual, RotationEnabled = true
+                AdControl adControl = new AdControl("4fd1b245-b648-44de-add5-1a6408f4618a", // ApplicationID
+                                                    "10016135",    // AdUnitID
+                                                    AdModel.Contextual, // AdModel
+                                                    true);         // RotationEnabled
+                // Make the AdControl size large enough that it can contain the image
+                adControl.Width = 300;
+                adControl.Height = 80;
 
-                
-
-
+                innerGrid.Children.Add(adControl);
+                Grid.SetRow(adControl, rowIndex++);
             }
         }
 
@@ -182,9 +190,11 @@ namespace CoinConverter
                     {
                         TextBlock temp = (TextBlock)RootView.FindName("textBlockFrom" + fromName + "For" + toName);
                         temp.Text = currency.Key + " = Invalid";
+
                     }
                 }
             }
         }
+    
     }
 }
