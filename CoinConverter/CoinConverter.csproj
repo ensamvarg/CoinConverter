@@ -101,6 +101,14 @@
     <Content Include="icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="images\usd.png" />
+    <Resource Include="images\sek.png" />
+    <Resource Include="images\gbp.png" />
+    <Resource Include="images\jpy.png" />
+    <Resource Include="images\eur.png" />
+    <Resource Include="PanoramaBackground.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="SplashScreenImage.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

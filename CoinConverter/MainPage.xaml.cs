@@ -15,6 +15,8 @@ using System.Xml.Linq;
 using System.IO;
 using System.IO.IsolatedStorage;
 using Microsoft.Advertising.Mobile.UI;
+using System.Windows.Media.Imaging;
+using Microsoft.Phone.Shell;
 
 namespace CoinConverter
 {
@@ -61,6 +63,7 @@ namespace CoinConverter
 
         public MainPage()
         {
+            
             InitializeComponent();
             currencies = new Dictionary<String, float>();
             currencies.Add("EUR", 1);
@@ -106,9 +109,10 @@ namespace CoinConverter
             {
                 String fromName = currencies.ElementAt(i).Key.ToString();
                 String fromValue = currencies.ElementAt(i).Value.ToString();
-                PanoramaItem temp = new PanoramaItem(){ Header = fromName, Name = "panoramaItem" + fromName};
 
-                Grid innerGrid = new Grid() { Name = "innerGrid" + fromName };
+                PanoramaItem temp = new PanoramaItem() { Header = fromName, Name = "panoramaItem" + fromName};
+
+                Grid innerGrid = new Grid() { Name = "innerGrid" + fromName};
                 innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(80)});
                 innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(290)});
                 innerGrid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(100, GridUnitType.Auto)});
@@ -134,9 +138,25 @@ namespace CoinConverter
                     if (i != j)
                     {
                         tempGrid.RowDefinitions.Add(new RowDefinition());
+                        StackPanel tempStack = new StackPanel()
+                        {
+                            Orientation = System.Windows.Controls.Orientation.Horizontal
+                        };
+                        Image tempImage = new Image()
+                        {
+                            Source = new BitmapImage(new Uri("../images/" + currencies.ElementAt(j).Key.ToString() + ".png", UriKind.Relative)),
+                            Stretch=Stretch.Fill,
+                            Width= 70,
+                            Height=45,
+                            Margin = new Thickness(10)
+                        };
+                        tempStack.Children.Add(tempImage);
+
                         TextBlock tempText = new TextBlock() { Name = "textBlockFrom" + fromName + "For" + currencies.ElementAt(j).Key.ToString(), Text = currencies.ElementAt(j).Key.ToString() + " = ...", FontSize = 42 };
-                        tempGrid.Children.Add(tempText);
-                        Grid.SetRow(tempText, rowIndex);
+                        tempStack.Children.Add(tempText);
+                        tempGrid.Children.Add(tempStack);
+                        Grid.SetRow(tempStack, rowIndex);
+                        
                         rowIndex++;
                     }
                 }
@@ -194,6 +214,11 @@ namespace CoinConverter
                     }
                 }
             }
+        }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     
     }
